@@ -86,6 +86,9 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup().replace_needed(
         'libtinyxml2.so', 'libtinyxml2-v34.so'
     ),
+        'vendor/lib64/com.motorola.hardware.biometric.fingerprint@1.1.so': blob_fixup().add_needed(
+        'libshim_fp.so'
+    ),
 }
 
 extract_fns: extract_fns_user_type = {
