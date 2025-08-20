@@ -68,6 +68,10 @@ $(call soong_config_set_bool,livedisplay_sysfs,enable_af,true)
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
 
+# StylusKeyHandler
+PRODUCT_PACKAGES += \
+    StylusKeyHandler
+	
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.st \
