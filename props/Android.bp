@@ -4,7 +4,7 @@
 //
 
 prebuilt_etc {
-    name: "hardware.sku.XT2405V.prop",
-    src: "hardware.sku.XT2405V.prop",
+    name: "hardware.sku.XT2419V.prop",
+    src: "hardware.sku.XT2419V.prop",
     product_specific: true,
 }

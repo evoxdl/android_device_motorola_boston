@@ -286,20 +286,18 @@ vendor/lib64/camera/com.qti.sensor.mot_ov50a.so
 vendor/lib64/camera/com.qti.sensor.mot_s5kjd1.so
 
 # Camera - sensormodule
-vendor/lib64/camera/com.qti.sensormodule.mot_avatrn_gc13a2_ofilm.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_avatrn_hi1336_ofilm.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_avatrn_imx896_mp_qtech.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_avatrn_imx896_qtech.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_avatrn_ov50a_qtech.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_avatrn_s5kjd1_ofilm.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_boston_gc13a2_ofilm.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_boston_hi1336_ofilm.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_boston_s5kgn9_ofilm.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_boston_s5kjd1_ofilm.bin
 
 # Camera - tuned
 vendor/lib64/camera/com.qti.tuned.default.bin
-vendor/lib64/camera/com.qti.tuned.mot_avatrn_gc13a2.bin
-vendor/lib64/camera/com.qti.tuned.mot_avatrn_hi1336.bin
-vendor/lib64/camera/com.qti.tuned.mot_avatrn_imx896.bin
-vendor/lib64/camera/com.qti.tuned.mot_avatrn_ov50a.bin
-vendor/lib64/camera/com.qti.tuned.mot_avatrn_s5kjd1.bin
+vendor/lib64/camera/com.qti.tuned.mot_boston_gc13a2.bin
+vendor/lib64/camera/com.qti.tuned.mot_boston_hi1336.bin
+vendor/lib64/camera/com.qti.tuned.mot_boston_s5kgn9.bin
+vendor/lib64/camera/com.qti.tuned.mot_boston_s5kjd1.bin
+
 
 # CapSense
 vendor/bin/capsense_reset
@@ -352,7 +350,7 @@ system_ext/bin/motsettings
 system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk
 
 # Moto Permissions
-product/etc/permissions/com.motorola.camera3.avatrn.xml:vendor/etc/permissions/com.motorola.camera3.avatrn.xml
+product/etc/permissions/com.motorola.camera3.boston.xml:vendor/etc/permissions/com.motorola.camera3.boston.xml
 product/etc/permissions/com.motorola.camera3.content.ai.xml:vendor/etc/permissions/com.motorola.camera3.content.ai.xml
 product/etc/permissions/com.motorola.camera3.lens.xml:vendor/etc/permissions/com.motorola.camera3.lens.xml
 product/etc/permissions/com.motorola.camera3.xml:vendor/etc/permissions/com.motorola.camera3.xml
@@ -420,20 +418,18 @@ vendor/etc/sensors/config/waipio_power_0.json
 vendor/etc/sensors/sns_reg_config
 
 # Thermal engine - configs
-vendor/etc/thermal-engine-avatrn-camera.conf
-vendor/etc/thermal-engine-avatrn-fastc.conf
-vendor/etc/thermal-engine-avatrn-game-perf.conf
-vendor/etc/thermal-engine-avatrn-teams.conf
-vendor/etc/thermal-engine-avatrn.conf
+vendor/etc/thermal-engine-boston-camera.conf
+vendor/etc/thermal-engine-boston-game-perf.conf
+vendor/etc/thermal-engine-boston-teams.conf
+vendor/etc/thermal-engine-boston.conf
 vendor/etc/thermal-engine.conf
 
 # Touchscreen firmware
-vendor/firmware/boe_goodix_cfg_group.bin
-vendor/firmware/focaltech-csot-ft3681-30-01-avatrn.bin
-vendor/firmware/goodix-boe-gt9916S-24010501-6597AA91-avatrn.bin
-vendor/firmware/goodix-tm-gt9916S-24031504-65F3E04F-avatrn.bin
+vendor/firmware/csot_goodix_cfg_group.bin
+vendor/firmware/goodix-csot-gt9916P-24030310-65E40FAF-boston.bin
+vendor/firmware/goodix-tm-gt9916P-24030313-65E40AA0-boston.bin
 vendor/firmware/tm_goodix_cfg_group.bin
 
 # Touchscreen firmware (recovery)
-vendor/firmware/goodix-boe-gt9916S-24010501-6597AA91-avatrn.bin:recovery/root/vendor/firmware/goodix-boe-gt9916S-24010501-6597AA91-avatrn.bin
-vendor/firmware/goodix-tm-gt9916S-24031504-65F3E04F-avatrn.bin:recovery/root/vendor/firmware/goodix-tm-gt9916S-24031504-65F3E04F-avatrn.bin
+vendor/firmware/goodix-csot-gt9916P-24030310-65E40FAF-boston.bin:recovery/root/vendor/firmware/goodix-csot-gt9916P-24030310-65E40FAF-boston.bin
+vendor/firmware/goodix-tm-gt9916P-24030313-65E40AA0-boston.bin:recovery/root/vendor/firmware/goodix-tm-gt9916P-24030313-65E40AA0-boston.bin

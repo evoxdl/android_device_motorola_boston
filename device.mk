@@ -29,8 +29,8 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 BOARD_SHIPPING_API_LEVEL := 31
 PRODUCT_SHIPPING_API_LEVEL := 34
 
-# Inherit from motorola sm7435-common
-$(call inherit-product, device/motorola/sm7435-common/common.mk)
+# Inherit from motorola sm6450-common
+$(call inherit-product, device/motorola/sm6450-common/common.mk)
 
 # Overlay
 PRODUCT_PACKAGES += \
@@ -44,14 +44,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_parrot/audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_parrot_qssi/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/configs/audio/mixer_paths_parrot_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_parrot/mixer_paths_parrot_qrd.xml \
-    $(LOCAL_PATH)/configs/audio/resourcemanager_parrot_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_parrot/resourcemanager_parrot_qrd.xml \
+    $(LOCAL_PATH)/configs/audio/mixer_paths_parrot_qrd_sku1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_parrot/mixer_paths_parrot_qrd_sku1.xml \
+    $(LOCAL_PATH)/configs/audio/resourcemanager_parrot_qrd_sku1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_parrot/resourcemanager_parrot_qrd_sku1.xml \
     $(LOCAL_PATH)/configs/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
     $(LOCAL_PATH)/configs/audio/usecaseKvManager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usecaseKvManager.xml
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.moto_sm7435_fod
+    android.hardware.biometrics.fingerprint@2.3-service.moto_sm6450_fod
 
 # Init
 PRODUCT_PACKAGES += \
@@ -77,13 +77,13 @@ $(call soong_config_set,lineage_powershare,powershare_path,/sys/class/power_supp
 
 # Properties
 PRODUCT_PACKAGES += \
-    hardware.sku.XT2405V.prop
+    hardware.sku.XT2419V.prop
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Vibrator
-$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.moto_sm7435-richtap)
+$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.moto_sm6450-richtap)
 $(call soong_config_set_bool,qti_vibrator,use_effect_stream,true)
 
 # VINTF
@@ -92,7 +92,7 @@ ODM_MANIFEST_DN_FILES := \
     $(LOCAL_PATH)/vintf/manifest_dn.xml
 ODM_MANIFEST_N_FILES := \
     $(LOCAL_PATH)/vintf/manifest_n.xml \
-    device/motorola/sm7435-common/vintf/manifest_ss.xml
+    device/motorola/sm6450-common/vintf/manifest_ss.xml
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/motorola/avatrn/avatrn-vendor.mk)
+$(call inherit-product, vendor/motorola/boston/boston-vendor.mk)
