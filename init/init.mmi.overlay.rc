@@ -1,7 +1,6 @@
 import /vendor/etc/init/hw/init.vendor.st21nfc.rc
 
 on fs
-    insmod /vendor/lib/modules/goodix_fod_mmi.ko
     #zram wb
     mount_all /vendor/etc/fstab.qcom.zram --early
 
@@ -21,16 +20,20 @@ on early-boot
     chown system system /dev/i2c-3
     chown system system /dev/i2c-4
 
-    # Add for goodix fingerprint
+    # Add for fingerprints
     chown system system /dev/goodix_fp
     chmod 0664 /dev/goodix_fp
-
+    chown system system /dev/jiiov_fp
+    chmod 0664 /dev/jiiov_fp
+	
     # for ghost log capture
     chmod 0444 /dev/tp_tools
 
 on post-fs-data
     mkdir /data/vendor/gf_data 0770 system system
     mkdir /mnt/vendor/persist/goodix 0770 system system
+    mkdir /data/vendor/jiiov 0770 system system
+    mkdir /mnt/vendor/persist/jiiov 0770 system system	
     # change permission of backlight brightness for tcmd daemon
     chmod 664 /sys/class/backlight/panel1-backlight/brightness
 
@@ -70,6 +73,8 @@ on boot
     chmod 0660 /sys/class/touchscreen/primary/sample
     chown system system /sys/class/touchscreen/primary/palm_settings
     chmod 0660 /sys/class/touchscreen/primary/palm_settings
+    chown system system /sys/class/touchscreen/primary/stylus_mode
+    chmod 0660 /sys/class/touchscreen/primary/stylus_mode	
     chown system /system /sys/class/touchscreen/primary/stowed
     chmod 0660 /sys/class/touchscreen/primary/stowed
     chown system system /sys/class/touchscreen/primary/pitch
