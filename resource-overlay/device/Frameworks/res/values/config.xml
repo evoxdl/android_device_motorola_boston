@@ -291,14 +291,20 @@
          the brightness value is negative, only the lux threshold is applied. -->
     <!-- Low zone brightness thresholds in the range [0, 255] -->
     <array name="config_brightnessThresholdsOfPeakRefreshRate" translatable="false">
-        <item>50</item>
+		<item>77</item>
+		<item>62</item>
     </array>
 
     <!-- Low zone lux thresholds -->
     <array name="config_ambientThresholdsOfPeakRefreshRate" translatable="false">
-        <item>-1</item>
+		<item>70</item>
+		<item>-1</item>
     </array>
 
+    <!-- Default refresh rate in the zone defined by brightness and ambient thresholds.
+         If non-positive, then the refresh rate is unchanged even if thresholds are configured. -->
+    <integer name="config_defaultRefreshRateInZone">90</integer>
+	
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 	
