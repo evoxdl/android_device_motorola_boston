@@ -39,7 +39,6 @@ on post-fs-data
 
     # Create directory for wireless charge test in factory
     mkdir /data/vendor/wlc 0775 vendor_tcmd system
-    chown system system /sys/devices/platform/soc/1d84000.ufshc/manual_gc
 
     # Add for after-sales ois gyro cal
     mkdir /mnt/vendor/persist/camera/gyro_compat 0770 vendor_tcmd camera
@@ -118,10 +117,6 @@ on boot
     chown system system /sys/class/power_supply/wireless/device/wlc_tx_type
     chmod 0660 /sys/class/power_supply/wireless/device/wlc_light_ctl
     chmod 0660 /sys/class/power_supply/wireless/device/wlc_fan_speed
-
-    # copy gps license file to /mnt/vendor/persist/data/pfm/licenses
-    copy /vendor/etc/motorola/qcom_gps_license.pfm /mnt/vendor/persist/data/pfm/licenses/qcom_gps_license.pfm
-    chmod 0644 /mnt/vendor/persist/data/pfm/licenses/qcom_gps_license.pfm
 
     # mdm_cutback can access HAC switch state
     chmod 0644 /data/vendor/radio/hac_on
