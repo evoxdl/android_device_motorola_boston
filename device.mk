@@ -69,7 +69,7 @@ PRODUCT_PACKAGES += \
 	init.oem.fingerprint2.sh
 
 # LiveDisplay
-$(call soong_config_set,livedisplay_sysfs,enable_af,true)
+$(call soong_config_set_bool,livedisplay_sysfs,enable_af,true)
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -104,7 +104,7 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Vibrator
 $(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.moto_sm6450-richtap)
-$(call soong_config_set,qti_vibrator,use_effect_stream,true)
+$(call soong_config_set_bool,qti_vibrator,use_effect_stream,true)
 
 # VINTF
 ODM_MANIFEST_SKUS += dn n
