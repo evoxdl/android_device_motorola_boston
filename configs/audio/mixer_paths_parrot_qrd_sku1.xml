@@ -177,6 +177,9 @@
     <ctl name="aw_dev_1_prof" value="Music" />
     <ctl name="aw_dev_1_switch" value="Enable" />
 
+    <!-- HAC switch -->
+    <ctl name="HAC Enable" value="Off" />
+
     <!-- HIFI Filter coefficients for headphones path -->
     <path name="hifi-filter-coefficients">
         <ctl name="RX0 FIR Coeff Num" value="8" />
@@ -1786,12 +1789,6 @@
     <path name="spkr-vi-record">
     </path>
 
-    <path name="audio-with-haptics-playback speaker-and-haptics">
-    </path>
-
-    <path name="audio-with-haptics-playback headphones-and-haptics">
-    </path>
-
     <!-- These are actual sound device specific mixer settings -->
     <path name="amic1">
         <ctl name="TX DEC0 MUX" value="SWR_MIC" />
@@ -1858,7 +1855,6 @@
     </path>
 
     <path name="haptics-dev">
-        <ctl name="SWR DAC_Port Switch" value="1" />
     </path>
 
     <path name="speaker-mono">
@@ -2079,9 +2075,15 @@
         <path name="handset" />
     </path>
 
-    <path name="voice-handset-hac">
-        <ctl name="aw_dev_1_switch" value="Disable" />
+    <path name="handset-hac">
         <ctl name="aw_dev_0_prof" value="HAC" />
+        <ctl name="aw_dev_1_prof" value="Music" />
+        <ctl name="aw_dev_1_switch" value="Disable" />
+    </path>
+
+    <path name="voice-handset-hac">
+        <path name="handset-hac" />
+        <ctl name="HAC Enable" value="On" />
     </path>
 
     <path name="voice-handset-hdk">
@@ -2818,6 +2820,7 @@
 
     <path name="incall_music_uplink handset-hac">
         <path name="incall_music_uplink" />
+        <ctl name="HAC Enable" value="On" />
     </path>
 
     <path name="incall_music_uplink display-port">
@@ -2925,6 +2928,7 @@
 
     <path name="incall_music_uplink2 handset-hac">
         <path name="incall_music_uplink2" />
+        <ctl name="HAC Enable" value="On" />
     </path>
 
     <path name="incall_music_uplink2 display-port">
