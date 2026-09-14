@@ -85,38 +85,9 @@ on boot
     # change permission for goodix TP
     chmod 0664 /dev/gtp_tools
 
-    # Set adaptive charging perms for HAL
-    chown system system /sys/module/qpnp_adaptive_charge/parameters/upper_limit
-    chown system system /sys/module/qpnp_adaptive_charge/parameters/lower_limit
-
-    # Set wlc icl and fw update
-    chown system system /sys/class/power_supply/wireless/device/tx_mode
-    chown system system /sys/class/power_supply/wireless/device/wls_input_current_limit
-    chmod 0660 /sys/class/power_supply/wireless/device/tx_mode
-    chmod 0660 /sys/class/power_supply/wireless/device/wls_input_current_limit
-    write /sys/class/qcom-battery/wireless_fw_update_time_ms 7000
-    write /sys/class/qcom-battery/wireless_fw_update 1
-
     #change vibrator test node file access permission
     chmod 0660 /sys/class/qcom-haptics/enable_play
     chown vendor_tcmd system /sys/class/qcom-haptics/enable_play
-
-    #change flip battery charging test command file access permission
-    chown vendor_tcmd system /sys/class/power_supply/charger/device/chg_en
-    chown vendor_tcmd system /sys/class/power_supply/charger/device/charger_suspend
-    chown vendor_tcmd system /sys/class/power_supply/charger/device/high_load_en
-    chown vendor_tcmd system /sys/class/power_supply/charger/device/low_load_en
-    chown vendor_tcmd system /sys/class/power_supply/charger/input_current_limit
-    chown vendor_tcmd system /sys/class/power_supply/charger/constant_charge_current
-
-    # Set wlc perms for HAL
-    chown system system /sys/class/power_supply/wireless/device/wlc_light_ctl
-    chown system system /sys/class/power_supply/wireless/device/wlc_fan_speed
-    chown system system /sys/class/power_supply/wireless/device/wlc_st_changed
-    chown system system /sys/class/power_supply/wireless/device/wlc_tx_power
-    chown system system /sys/class/power_supply/wireless/device/wlc_tx_type
-    chmod 0660 /sys/class/power_supply/wireless/device/wlc_light_ctl
-    chmod 0660 /sys/class/power_supply/wireless/device/wlc_fan_speed
 
     # mdm_cutback can access HAC switch state
     chmod 0644 /data/vendor/radio/hac_on
@@ -141,6 +112,33 @@ on property:sys.boot_completed=1
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_usb_suspend
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/addr
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/data
+
+    #change flip battery charging test command file access permission
+    chown vendor_tcmd system /sys/class/power_supply/charger/device/chg_en
+    chown vendor_tcmd system /sys/class/power_supply/charger/device/charger_suspend
+    chown vendor_tcmd system /sys/class/power_supply/charger/device/high_load_en
+    chown vendor_tcmd system /sys/class/power_supply/charger/device/low_load_en
+    chown vendor_tcmd system /sys/class/power_supply/charger/input_current_limit
+    chown vendor_tcmd system /sys/class/power_supply/charger/constant_charge_current
+
+    # Set adaptive charging perms for HAL
+    chown system system /sys/module/qpnp_adaptive_charge/parameters/upper_limit
+    chown system system /sys/module/qpnp_adaptive_charge/parameters/lower_limit
+
+    # Set wlc icl and fw update
+    chown system system /sys/class/power_supply/wireless/device/wls_input_current_limit
+    chmod 0660 /sys/class/power_supply/wireless/device/wls_input_current_limit
+    write /sys/class/qcom-battery/wireless_fw_update_time_ms 7000
+    write /sys/class/qcom-battery/wireless_fw_update 1
+
+    # Set wlc perms for HAL
+    chown system system /sys/class/power_supply/wireless/device/wlc_light_ctl
+    chown system system /sys/class/power_supply/wireless/device/wlc_fan_speed
+    chown system system /sys/class/power_supply/wireless/device/wlc_st_changed
+    chown system system /sys/class/power_supply/wireless/device/wlc_tx_power
+    chown system system /sys/class/power_supply/wireless/device/wlc_tx_type
+    chmod 0660 /sys/class/power_supply/wireless/device/wlc_light_ctl
+    chmod 0660 /sys/class/power_supply/wireless/device/wlc_fan_speed
 
 #change for Boston because the node changed
 on property:vendor.wifi.tethering=false
