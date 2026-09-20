@@ -69,10 +69,6 @@ PRODUCT_PACKAGES += \
 # LiveDisplay
 $(call soong_config_set_bool,livedisplay_sysfs,enable_af,true)
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.lineage
-
 # StylusKeyHandler
 PRODUCT_PACKAGES += \
     StylusKeyHandler
